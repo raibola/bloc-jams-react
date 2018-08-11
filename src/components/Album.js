@@ -66,11 +66,7 @@ class Album extends Component {
            <tbody>
             {
               this.state.album.songs.map( (songs, index) =>
-<<<<<<< HEAD
-              <tr key={index}>
-=======
               <tr className="song" key={index} onClick={() => this.handleSongClick(songs)} >
->>>>>>> checkpoint-blocjamsreact-audioplayback
               <td>{index + 1}</td>
               <td>{songs.title}</td>
               <td>{songs.duration}</td>
