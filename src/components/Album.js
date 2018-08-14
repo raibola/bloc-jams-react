@@ -13,7 +13,8 @@ class Album extends Component {
           this.state = {
             album: album,
             currentSong: album.songs[0],
-            isPlaying: false
+            isPlaying: false,
+            isHovering: false
           };
 
           this.audioElement = document.createElement('audio');
@@ -38,14 +39,14 @@ class Album extends Component {
         handleSongClick(song) {
             const isSameSong = this.state.currentSong === song;
             if (this.state.isPlaying && isSameSong) {
-                this.pause();
+               this.pause();
               } else {
                 if (!isSameSong) { this.setSong(song); }     
                 this.play();
               }
           }
-        
 
+          
     render() {
       return (
         <section className="album">
@@ -66,8 +67,16 @@ class Album extends Component {
            <tbody>
             {
               this.state.album.songs.map( (songs, index) =>
-              <tr className="song" key={index} onClick={() => this.handleSongClick(songs)} >
-              <td>{index + 1}</td>
+              <tr className="song" key={index} onClick={() => this.handleSongClick(songs)} onMouseEnter={() => this.setState({ isHovering: index + 1 })} 
+              onMouseLeave={() => this.setState({ isHovering: false })} >
+             <td>
+                {
+                this.state.currentSong === songs && this.state.isHovering ?
+                (<span className={this.state.isPlaying ? "ion-pause" : "ion-play"} />) :
+                this.state.isHovering === index + 1 ? (<span className="ion-play" />) :
+                (<span className="song-number">{index + 1}</span>)
+                }
+              </td>
               <td>{songs.title}</td>
               <td>{songs.duration}</td>
               </tr>
