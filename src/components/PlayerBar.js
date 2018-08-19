@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../index.css';
  
 class PlayerBar extends Component {
   render() {
@@ -16,8 +17,8 @@ class PlayerBar extends Component {
            </button>
          </section>
          <section id="time-control">
-         <div className="current-time">{this.props.formatTime(this.props.currentTime)}</div>
-           <input 
+         <div className="current-time"></div>
+           <span>{this.props.formatTime(this.props.currentTime)}</span><input 
              type="range" 
              className="seek-bar" 
              value={(this.props.currentTime / this.props.duration) || 0} 
@@ -25,12 +26,12 @@ class PlayerBar extends Component {
              min="0" 
              step="0.01" 
              onChange={this.props.handleTimeChange}
-           />   
-         <div className="total-time">{this.props.formatTime(this.props.duration)}</div>
+           /><span>{this.props.formatTime(this.props.duration)}</span>    
+         <div className="total-time"></div>
          </section>
          <section id="volume-control">
-          <div className="icon ion-volume-low"></div>
-            <input 
+          <div className="volume-low"></div>
+            <span className="icon ion-volume-low" /><input 
              type="range" 
              className="seek-bar" 
              value={this.props.currentVolume}
@@ -38,8 +39,8 @@ class PlayerBar extends Component {
              min="0.0"
              step="0.01"
              onChange={this.props.handleVolumeChange}
-                    /> 
-          <div className="icon ion-volume-high"></div>
+                    /><span className="icon ion-volume-high" /> 
+          <div className="volume-high"></div>
          </section>
       </section>
     );

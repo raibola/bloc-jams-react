@@ -1,5 +1,92 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Gill Sans';
+  color: rgb(121, 58, 121);
+  background: white;
+  text-align: right;
+}
+
+.navi {
+  left: 0;
+  right: 0;
+  margin: 0;
+  top: 0;
+  padding: 0;
+  width: 100%;
+  background: rgb(110, 64, 110);
+  height: 24px;
+  font-size: 20px;
+  position: fixed;
+  text-align: right;
+}
+
+.linkapp:hover {
+  background-color: rgb(66, 24, 64);
+}
+
+.land {
+  color: white;
+  padding: 10px;
+}
+
+.lib {
+  color: white;
+  padding: 10px;
+  text-align: right;
+  padding-right: 20px;
+}
+
+.linkapp {
+  text-decoration: none;
+  text-align: right;
+}
+
+.point {
+  width: 300px;
+  float: left;
+  margin-right: 50px;
+  margin-left: 50px;
+  text-align: center;
+}
+
+.player-bar {
+color: white;
+padding: 5px;
+}
+
+#album-cover-art {
+width: 150px;
+height: 150px;
+}
+
+.link-library{
+  float: left;
+  text-decoration: none;
+  padding-left: 250px;
+  padding-top: 100px;
+}
+
+.img-library{
+  width: 225px;
+  height: 250px;
+  float: center;
+}
+
+footer {
+  background: rgb(110, 64, 110);
+  width: 100%;
+}
+
+.bloc-jams {
+  padding: 10px;
+}
+
+.headphones {
+  width: 600px;
+  height: 350px;
+}
+
+#song-list {
+  padding: 10px;
 }
